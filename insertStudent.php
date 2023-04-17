@@ -19,7 +19,6 @@ $sql = "INSERT INTO 'students' (`fname`, `lname`, `gender`, `age`) VALUES (`$fna
 $result = $connect->query($sql);
 if($result){
     echo "<p>Данные о студенте добавлены</p>";
-    header("location:index.php");//редирект - переход на главеую страницу.
 }
 else {
     echo "<p>Ошибка добавления</p>";

@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Клиент-серверное приложение</title>
+    <script defer src="script.js"></script>
 </head>
 <body>
-    <form action="insertStudent.php" method="post">
+    <form id="form-insertStudent">
         <input type="text" name="fname" id="fname" placeholder="введите имя" required><br>
         <input type="text" name="lname" id="lname" placeholder="введите фамилию" required><br>
         <input type="number" name="age" id="age" placeholder="введите возвраст"required><br>

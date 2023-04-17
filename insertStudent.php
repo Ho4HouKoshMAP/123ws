@@ -18,8 +18,8 @@ $connect->set_charset("utf8");
 $sql = "INSERT INTO 'students' (`fname`, `lname`, `gender`, `age`) VALUES (`$fname`, `$lname`, `$gender` , `$age`)";
 $result = $connect->query($sql);
 if($result){
-    echo "<p>Данные о студенте добавлены</p>";
+    echo "<p>OK</p>";
 }
 else {
-    echo "<p>Ошибка добавления</p>";
+    echo "<p>Error</p>";
 }

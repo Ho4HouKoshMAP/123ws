@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Апр 12 2023 г., 10:17
+-- Время создания: Апр 17 2023 г., 07:25
 -- Версия сервера: 5.7.11
 -- Версия PHP: 7.4.20
 
@@ -30,7 +30,7 @@ CREATE TABLE `students` (
   `student_id` int(11) NOT NULL,
   `fname` varchar(50) NOT NULL,
   `lname` varchar(50) NOT NULL,
-  `gender` enum('m','f') NOT NULL,
+  `gender` enum('f','m') NOT NULL,
   `age` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -39,8 +39,13 @@ CREATE TABLE `students` (
 --
 
 INSERT INTO `students` (`student_id`, `fname`, `lname`, `gender`, `age`) VALUES
-(1, 'Иван', 'Петров', 'm', 17),
-(2, 'Пётр', 'Иванов', 'm', 16);
+(1, 'Иван', 'Федоров', 'f', 17),
+(2, 'Анна', 'Михайловна', 'm', 18),
+(3, 'Петр', 'Петров', 'm', 21),
+(4, 'veregin', 'ilya', 'm', 2),
+(5, 'veregin', 'ilya', 'm', 6),
+(6, 'veregin', 'ilya', 'f', 3),
+(7, 'veregin', 'ilya', 'm', 13);
 
 --
 -- Индексы сохранённых таблиц
@@ -60,7 +65,7 @@ ALTER TABLE `students`
 -- AUTO_INCREMENT для таблицы `students`
 --
 ALTER TABLE `students`
-  MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

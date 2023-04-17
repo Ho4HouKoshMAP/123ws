@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Клиент-серверное приложение</title>
     <script defer src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <form id="form-insertStudent">
@@ -18,9 +19,8 @@
         <label for="f">женский</label><br>
         <input type="submit" value="добавить">
     </form>
-
-<?php
-
+<div class="content"> 
+        <?php
 require_once ("config.php");
 
 //соединение с БД
@@ -49,6 +49,12 @@ while ($row = $result->fetch_assoc()){
 
 
 ?>
-    
+</div>
+<div class="block">
+
+</div>
+<div class="message">
+
+</div>
 </body>
 </html>

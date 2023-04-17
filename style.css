@@ -1,0 +1,33 @@
+.block{
+    width: 200px;
+    height: 200px;
+
+    border: 1px solid black;
+    background: pink;
+}
+.block:hover{
+    background:green;
+
+
+}
+.message{
+    position: absolute;
+    left: 0;
+    width:100%;
+    top:0;
+    padding:20px 50px;
+    transform: translateY(-200px);
+    transition: transform 0.5s ease-in;
+
+}
+.success{
+    background: lightgreen;
+    color: darkcyan;
+}
+.reject{
+    background: lightgrey;
+    color: red;
+}
+.show-message{
+    transform:translateY(0)
+}

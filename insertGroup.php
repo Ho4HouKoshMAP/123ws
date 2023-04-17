@@ -1,8 +1,6 @@
 <?php
-$fname = $_POST['fname'];
-$lname = $_POST['lname'];
-$age = $_POST['age'];
-$gender = $_POST['gender'];
+
+$title = $_POST['title'];
 
 require_once ("config.php");
 
@@ -15,11 +13,11 @@ if($connect->connect_error){
 $connect->set_charset("utf8");
 
 //Код запроса переменная sql 
-$sql = "INSERT INTO `students` (`fname`, `lname`, `gender`, `age`) VALUES ('$fname', '$lname', '$gender' , '$age')";
+$sql = "INSERT INTO `groups`(`title`) VALUES ('$title')";
 $result = $connect->query($sql);
 if($result){
     echo "<p>OK</p>";
 }
 else {
-    echo "<p>Ошибка</p>";
+    echo "<p>Error</p>";
 }

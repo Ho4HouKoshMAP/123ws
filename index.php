@@ -19,42 +19,79 @@
         <label for="f">женский</label><br>
         <input type="submit" value="добавить">
     </form>
-<div class="content"> 
-        <?php
-require_once ("config.php");
+    <div class="content"> 
+                <?php
+        require_once ("config.php");
 
-//соединение с БД
-$connect = new mysqli(HOST, USER, PASSWORD, DB);
-if($connect->connect_error){
-    exit("Ошибка подключения к БД: ".$connect->connect_error);
-}
-//установить кодировку
-$connect->set_charset("utf8");
+        //соединение с БД
+        $connect = new mysqli(HOST, USER, PASSWORD, DB);
+        if($connect->connect_error){
+            exit("Ошибка подключения к БД: ".$connect->connect_error);
+        }
+        //установить кодировку
+        $connect->set_charset("utf8");
 
-//код запроса
-$sql = "SELECT * FROM `students`";
+        //код запроса
+        $sql = "SELECT * FROM `students`";
 
-//выполнить запрос
-$result = $connect->query($sql);
+        //выполнить запрос
+        $result = $connect->query($sql);
 
-//вести результаты запроса на страницу
-while ($row = $result->fetch_assoc()){
-    echo "<div>
-            $row[lname], $row[fname], $row[gender], $row[age]
-        </div>";
-}
-
-
+        //вести результаты запроса на страницу
+        while ($row = $result->fetch_assoc()){
+            echo "<div>
+                    $row[lname], $row[fname], $row[gender], $row[age]
+                </div>";
+        }
 
 
 
-?>
-</div>
+
+
+        ?>
+    </div>
+
+
+
+
+
 <div class="block">
 
 </div>
 <div class="message">
 
 </div>
+
+
+
+    <!--  -->
+
+
+    <div class="group">
+    <form id="form-insertGroup">
+    <input type="text" name="title" id="title" placeholder="введите группу" required><br>
+    <input type="submit" value="добавить">
+    </form>
+        <?php
+        $connect = new mysqli(HOST, USER, PASSWORD, DB);
+        if($connect->connect_error){
+            exit("Ошибка подключения к БД: ".$connect->connect_error);
+
+        }
+        $connect->set_charset("utf8");
+        $sql = "SELECT * FROM `groups`";
+        $result = $connect -> query($sql);
+        while ($row = $result ->fetch_assoc()){
+            echo "<div>
+            $row[group_id], $row[title]</div>";
+        }
+
+
+        
+
+        ?>
+        
+    </div>
+    <!--  -->
 </body>
 </html>
